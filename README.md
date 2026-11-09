@@ -1,16 +1,23 @@
-## Hi there 👋
+# Personal website
 
-<!--
-**FikerNegash/fikernegash** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Static site for GitHub Pages. No build step.
 
-Here are some ideas to get you started:
+## Files
+- `index.html`, `research.html`, `contact.html` — the three pages. The CV tab links straight to `cv.pdf`.
+- `cv.html` — source of the CV. Edit this, then re-print it to `cv.pdf` (see below).
+- `style.css` — layout, colours, light and dark themes. `theme.js` — the dark-mode toggle (remembers the choice in the browser).
+- `fonts/` — Newsreader (SIL Open Font License), bundled so the site and the PDF use the same font offline.
+- `photo.jpg` — not included yet. Save your picture under that name in this folder and the dashed slot on the home page is replaced automatically.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Publish on GitHub Pages
+1. Create a repository named `<your-username>.github.io` on GitHub.
+2. Copy everything in this folder (including the hidden `.nojekyll`) into the repository and push to the `main` branch.
+3. On GitHub, open Settings → Pages, set Source to "Deploy from a branch", branch `main`, folder `/ (root)`, and save.
+4. The site appears at `https://<your-username>.github.io/` after a minute or two.
+
+## Re-print the CV
+Open `cv.html` in Chrome, press Ctrl+P, choose "Save as PDF", paper size Letter, margins Default, and untick "Headers and footers". Or from PowerShell, inside this folder:
+
+```
+& "C:\Program Files\Google\Chrome\Application\chrome.exe" --headless=new --disable-gpu --allow-file-access-from-files --no-pdf-header-footer --print-to-pdf="$PWD\cv.pdf" "file:///$PWD\cv.html"
+```

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fiker Girma Negash — CV</title>
+<style>
+/* CV page. Source for cv.pdf: print this page from Chrome (Letter, no headers/footers). Layout modelled on a two-column academic CV. */
+@font-face { font-family: "Newsreader"; src: url("fonts/Newsreader-VF.ttf") format("truetype"); font-weight: 200 800; font-style: normal; }
+@font-face { font-family: "Newsreader"; src: url("fonts/Newsreader-Italic-VF.ttf") format("truetype"); font-weight: 200 800; font-style: italic; }
+@page { size: letter; margin: 0.85in 1in 0.8in 1in; }
+* { box-sizing: border-box; }
+html { font-size: 11pt; }
+body { margin: 0; color: #111; background: #fff; font-family: "Newsreader", Georgia, "Times New Roman", serif; line-height: 1.32; }
+.page { max-width: 6.5in; margin: 0 auto; padding: 0.85in 0 0.8in; }
+h1 { font-size: 20pt; font-weight: 400; font-variant: small-caps; letter-spacing: .06em; margin: 0 0 4pt; padding-bottom: 4pt; border-bottom: 0.6pt solid #111; }
+section { display: grid; grid-template-columns: 1.3in 1fr; column-gap: 0.2in; margin-top: 16pt; }
+section h2 { font-size: 10.5pt; font-weight: 400; font-variant: small-caps; letter-spacing: .05em; margin: 0; line-height: 1.3; }
+.body { min-width: 0; }
+.row { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
+.row + .row, .block + .block { margin-top: 7pt; }
+.sub { padding-left: 14pt; }
+.sub .row + .row { margin-top: 0; }
+.date { white-space: nowrap; }
+.contact { display: grid; grid-template-columns: auto 1fr; column-gap: 24pt; } .contact div:first-child { white-space: nowrap; } .contact div:last-child { text-align: right; }
+b { font-weight: 600; }
+ol { margin: 0; padding-left: 1.4em; }
+li { margin: 0; }
+a { color: inherit; text-decoration: none; }
+.years .row { justify-content: flex-start; gap: 14pt; }
+.years .yr { width: 0.5in; flex: none; }
+.note { padding-left: 14pt; }
+footer { text-align: center; font-size: 9.5pt; margin-top: 36pt; }
+@media screen { body { background: #e9e9e9; } .page { background: #fff; padding: 0.85in 1in 0.8in; max-width: 8.5in; min-height: 11in; margin: 24px auto; box-shadow: 0 1px 6px rgba(0,0,0,.15); } }
+@media print { .page { padding: 0; margin: 0; max-width: none; } footer { position: fixed; bottom: 0; left: 0; right: 0; } }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>Fiker Girma Negash</h1>
+
+<section>
+  <h2>Contact<br>Information</h2>
+  <div class="body contact">
+    <div>Department of Government<br>Harvard University<br>1737 Cambridge Street, Cambridge, MA 02138</div>
+    <div><a href="mailto:fnegash@g.harvard.edu">fnegash@g.harvard.edu</a></div>
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="body">
+    <div class="block">
+      <div class="row"><span><b>Harvard University</b>, Cambridge, MA</span></div>
+      <div class="sub">
+        <div class="row"><span>PhD student, Department of Government</span><span class="date">2026 &ndash; present</span></div>
+        <div class="row"><span>A.B., Government</span><span class="date">2023</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Working<br>Papers</h2>
+  <div class="body">
+    <ol>
+      <li>&ldquo;Don&rsquo;t Know, Don&rsquo;t Care: Experimental Evidence on Barriers to Responsive Public Services in Ethiopia&rdquo; (with D. Agness, P. Dupas, and T. Getahun). <a href="https://www.socialscienceregistry.org/trials/2114">AEA RCT Registry 0002114</a>.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <h2>Research<br>Experience</h2>
+  <div class="body">
+    <div class="block">
+      <div class="row"><span><b>Predoctoral Research Fellow, Princeton University</b></span><span class="date">2024 &ndash; 2026</span></div>
+      <div class="sub">Research Program in Development Economics</div>
+    </div>
+    <div class="block">
+      <div class="row"><span><b>Rogers Family Research Fellow, Harvard University</b></span><span class="date">2022 &ndash; 2023</span></div>
+      <div class="sub">Weatherhead Center for International Affairs (honors thesis project)</div>
+    </div>
+    <div class="block">
+      <div class="row"><span><b>Research Partner, Harvard University</b></span><span class="date">2020 &ndash; 2022</span></div>
+      <div class="sub">Harvard Radcliffe Institute for Advanced Study</div>
+    </div>
+    <div class="block">
+      <div class="row"><span><b>Research Assistant, Harvard College</b></span><span class="date">2020</span></div>
+      <div class="sub">Franklin Delano Roosevelt Foundation</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Awards and<br>Grants</h2>
+  <div class="body years">
+    <div class="row"><span class="yr">2023</span><span>Bonaparte Prize, departmental distinction ($3,990)</span></div>
+    <div class="row"><span class="yr">2023</span><span>Weatherhead Center Thesis Grant ($1,500)</span></div>
+    <div class="row"><span class="yr">2021</span><span>Wendell Prize, one per class year ($21,000)</span></div>
+    <div class="row"><span class="yr">2021</span><span>Detur Book Prize, college-wide distinction</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Languages</h2>
+  <div class="body">Amharic, English, French</div>
+</section>
+
+<footer>1 of 1</footer>
+</div>
+</body>
+</html>
