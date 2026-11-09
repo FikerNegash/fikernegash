@@ -1,36 +1,28 @@
-/* Fiker Girma Negash — site stylesheet. Font: Source Serif 4 (OFL), bundled in fonts/. */
+/* Fiker Negash — site stylesheet. Neobrutalist treatment: thick borders, hard offset shadows, flat yellow accent. Font: Source Serif 4 (OFL), bundled in fonts/. */
 @font-face { font-family: "Source Serif 4"; src: url("fonts/SourceSerif4-VF.ttf") format("truetype"); font-weight: 200 900; font-style: normal; font-display: swap; }
 @font-face { font-family: "Source Serif 4"; src: url("fonts/SourceSerif4-Italic-VF.ttf") format("truetype"); font-weight: 200 900; font-style: italic; font-display: swap; }
 
 :root {
-  --bg: #ffffff;
-  --text: #1e1e1e;
-  --heading: #111111;
-  --muted: #5f5f5f;
-  --name: #1e2f45;
-  --nav: #3a3a3a;
-  --rule: #e4e4e4;
-  --box: #9a9a9a;
-  --box-hover: #f0f0f0;
-  --slot: #f4f4f4;
-  --accent: #e4891f;
-  --highlight: #ffe566;
-  --on-highlight: #1a1a1a;
+  --bg: #f6f4ec;
+  --text: #141414;
+  --heading: #0a0a0a;
+  --muted: #4f4f4f;
+  --ink: #0a0a0a;         /* border and shadow colour */
+  --accent: #ffde3b;      /* flat yellow */
+  --accent-2: #ff8a3d;    /* orange, used sparingly */
+  --surface: #ffffff;
+  --shadow: 4px 4px 0 var(--ink);
+  --shadow-sm: 3px 3px 0 var(--ink);
 }
 :root[data-theme="dark"] {
-  --bg: #141414;
-  --text: #e4e4e4;
+  --bg: #161616;
+  --text: #ececec;
   --heading: #ffffff;
-  --muted: #a3a3a3;
-  --name: #c5d3e3;
-  --nav: #c4c4c4;
-  --rule: #2c2c2c;
-  --box: #7a7a7a;
-  --box-hover: #242424;
-  --slot: #1e1e1e;
-  --accent: #f0a04b;
-  --highlight: #e6c84a;
-  --on-highlight: #141414;
+  --muted: #b0b0b0;
+  --ink: #f2f2f2;
+  --accent: #f5d327;
+  --accent-2: #ff9a55;
+  --surface: #1f1f1f;
 }
 
 * { box-sizing: border-box; }
@@ -46,84 +38,79 @@ body {
 }
 .wrap { max-width: 780px; margin: 0 auto; padding: 0 16px; }
 
-/* Header: name left, tabs right, theme toggle at the end of the tabs */
-header { padding: 18px 0 14px; border-bottom: 1px solid var(--rule); margin-bottom: 36px; }
-header .wrap { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 24px; }
-.site-name { color: var(--name); text-decoration: none; transition: color .15s ease; letter-spacing: .02em; font-size: 1.15rem; font-weight: 500; }
-nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 0; }
-nav li + li { border-left: 1px solid var(--box); }
-nav li:last-child { border-left: none; margin-left: 10px; }
-nav a { position: relative; display: inline-block; color: var(--nav); text-decoration: none; text-transform: uppercase; letter-spacing: .12em; font-size: .72rem; font-weight: 500; margin: 0 6px; padding: 3px 8px 7px; border-radius: 3px; transition: color .15s ease, background .15s ease; }
-nav a::after { content: ""; position: absolute; left: 50%; bottom: 0; width: 0; height: 2px; background: var(--accent); transform: translateX(-50%); transition: width .2s ease; }
-nav a:hover { color: var(--on-highlight); background: var(--highlight); }
-nav a:hover::after { width: 0; }
-nav a[aria-current="page"]::after { width: 1.8em; }
-nav a[aria-current="page"] { color: var(--heading); }
-#theme-toggle { background: none; border: 1px solid var(--box); color: var(--muted); border-radius: 999px; font: inherit; font-size: .8rem; line-height: 1; padding: 4px 10px; cursor: pointer; }
-#theme-toggle:hover { color: var(--heading); background: var(--box-hover); }
+/* Header: tabs only, heavy rule under the bar */
+header { padding: 16px 0 14px; border-bottom: 3px solid var(--ink); margin-bottom: 40px; }
+header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
+nav a {
+  display: inline-block;
+  color: var(--heading);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: .95rem;
+  padding: 4px 11px;
+  border: 2px solid transparent;
+  transition: transform .1s ease, box-shadow .1s ease, background .1s ease;
+}
+nav a:hover { border-color: var(--ink); background: var(--surface); box-shadow: var(--shadow-sm); transform: translate(-1px, -1px); }
+nav a[aria-current="page"] { border-color: var(--ink); background: var(--accent); color: #0a0a0a; box-shadow: var(--shadow-sm); }
+nav a[aria-current="page"]:hover { transform: none; }
+#theme-toggle { background: none; border: none; padding: 4px 6px; color: var(--heading); font: inherit; font-size: 1.25rem; line-height: 1; cursor: pointer; }
+#theme-toggle:hover { color: var(--accent-2); }
 
 /* Body text */
-main { padding: 24px 0 56px; min-height: 55vh; }
-h1 { font-size: 1.5rem; font-weight: 500; color: var(--heading); margin: 0 0 .9rem; }
-h2 { font-size: 1.05rem; font-weight: 500; color: var(--heading); margin: 1.8rem 0 .6rem; }
-p { margin: 0 0 .85rem; }
+main { padding: 0 0 56px; min-height: 55vh; }
+h1 { font-size: 1.6rem; font-weight: 800; color: var(--heading); margin: 0 0 1rem; letter-spacing: -.01em; }
+h2 { font-size: 1.1rem; font-weight: 800; color: var(--heading); margin: 1.8rem 0 .6rem; }
+p { margin: 0 0 .9rem; }
 em { font-style: italic; }
 
-/* Links: a thin box instead of a colour */
+/* Links: boxed with a hard shadow on hover */
 main a, footer a {
   color: inherit;
   text-decoration: none;
-  border: 1px solid var(--box);
-  border-radius: 3px;
-  padding: 0 .28em;
-  margin: 0 .02em;
-  line-height: 1.25;
+  border: 2px solid var(--ink);
+  padding: 0 .3em;
+  margin: 0 .05em;
+  line-height: 1.3;
   white-space: nowrap;
+  background: var(--surface);
+  transition: transform .1s ease, box-shadow .1s ease, background .1s ease;
+  display: inline-block;
 }
-main a:hover, footer a:hover { background: var(--box-hover); border-color: var(--accent); }
-.site-name:hover { color: var(--accent); }
+main a:hover, footer a:hover { background: var(--accent); color: #0a0a0a; box-shadow: var(--shadow-sm); transform: translate(-1px, -1px); }
 
-/* Home: large name, affiliation line, photo floated right with rounded corners */
-.big-name { font-size: 2.5rem; font-weight: 400; letter-spacing: -.01em; margin: 0 0 .2rem; line-height: 1.15; }
-.affil { color: var(--muted); margin-bottom: 1.2rem; }
-.portrait-img { float: right; width: 230px; height: auto; margin: .2rem 0 16px 28px; border-radius: 10px; }
+/* Home: big name, affiliation line, photo on the right */
+.big-name { font-size: 2.7rem; font-weight: 900; letter-spacing: -.02em; margin: 0 0 .3rem; line-height: 1.1; }
+.affil { color: var(--muted); margin-bottom: 1.3rem; font-weight: 500; }
+.portrait-img { float: right; width: 230px; height: auto; margin: .2rem 0 16px 28px; border: 3px solid var(--ink); border-radius: 14px; box-shadow: var(--shadow); background: var(--surface); }
 .clear { clear: both; }
-h2.rule { font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--rule); padding-bottom: 6px; margin: 1.6rem 0 .7rem; }
-ul.edu { list-style: none; margin: 0 0 1.4rem; padding: 0; }
-ul.edu li { margin-bottom: .35rem; }
-ul.edu b { font-weight: 600; margin-right: .4rem; }
-ul.edu span { color: var(--muted); font-size: .92rem; }
-.cv-link { margin: 1.4rem 0; }
-.address { font-size: .82rem; color: var(--muted); margin-top: 2rem; }
 
-/* Research page */
+/* Research agenda: numbered projects */
+ol.projects { padding-left: 1.4rem; margin: 0 0 1.4rem; }
+ol.projects li { margin-bottom: .6rem; padding-left: .2rem; }
+
+/* Research page: papers with collapsible abstracts */
 ol.papers { padding-left: 1.4rem; margin: 0; }
 ol.papers li { margin-bottom: 1.5rem; }
-ol.papers .title { color: var(--heading); }
-ol.papers .links { display: block; margin-top: .25rem; font-size: .9rem; }
+ol.papers .title { color: var(--heading); font-weight: 700; }
+ol.papers .authors { display: block; margin-top: .15rem; color: var(--muted); }
+ol.papers .links { display: flex; flex-wrap: wrap; gap: .5rem .8rem; align-items: baseline; margin-top: .55rem; font-size: .92rem; }
+details { display: inline; }
+details summary { list-style: none; cursor: pointer; display: inline-block; border: 2px solid var(--ink); padding: 0 .3em; line-height: 1.3; background: var(--surface); font-weight: 600; transition: transform .1s ease, box-shadow .1s ease, background .1s ease; }
+details summary::-webkit-details-marker { display: none; }
+details summary:hover { background: var(--accent); color: #0a0a0a; box-shadow: var(--shadow-sm); transform: translate(-1px, -1px); }
+details[open] summary { background: var(--accent); color: #0a0a0a; }
+details p { display: block; margin: .7rem 0 .3rem; padding: .7rem .9rem; border: 2px solid var(--ink); background: var(--surface); box-shadow: var(--shadow); font-size: .95rem; line-height: 1.45; }
 
-/* Contact page */
-address { font-style: normal; }
-
-footer { border-top: 1px solid var(--rule); padding: 20px 0 48px; color: var(--muted); font-size: .8rem; text-align: center; }
+footer { border-top: 3px solid var(--ink); padding: 18px 0 48px; color: var(--muted); font-size: .82rem; text-align: center; }
 
 @media (max-width: 560px) {
   html { font-size: 16px; }
-  header { padding-top: 32px; }
-  .portrait-img { float: none; width: 200px; margin: 0 0 18px; }
-  .big-name { font-size: 2rem; }
+  header { margin-bottom: 28px; }
+  .portrait-img { float: none; width: 200px; margin: 0 0 18px; display: block; }
+  .big-name { font-size: 2.1rem; }
 }
-
-/* Research agenda: numbered projects with room between them */
-ol.projects { padding-left: 1.4rem; margin: 0 0 1.8rem; }
-ol.projects li { margin-bottom: .6rem; padding-left: .2rem; }
-
-/* Collapsible abstracts on the research page */
-ol.papers .authors { display: block; margin-top: .15rem; color: var(--muted); }
-ol.papers .links { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: baseline; margin-top: .55rem; font-size: .9rem; }
-details { display: inline; }
-details summary { list-style: none; cursor: pointer; display: inline-block; border: 1px solid var(--box); border-radius: 3px; padding: 0 .28em; line-height: 1.25; }
-details summary::-webkit-details-marker { display: none; }
-details summary:hover { background: var(--box-hover); border-color: var(--accent); }
-details[open] summary { background: var(--box-hover); }
-details p { display: block; margin: .7rem 0 .3rem; font-size: .95rem; line-height: 1.4; }
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

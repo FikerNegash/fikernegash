@@ -8,7 +8,7 @@
   function apply(t) {
     root.setAttribute("data-theme", t);
     var b = document.getElementById("theme-toggle");
-    if (b) { b.textContent = t === "dark" ? "☼ light" : "☾ dark"; b.setAttribute("aria-label", "Switch to " + (t === "dark" ? "light" : "dark") + " mode"); }
+    if (b) { b.textContent = t === "dark" ? "☀" : "☾"; b.setAttribute("aria-label", "Switch to " + (t === "dark" ? "light" : "dark") + " mode"); }
   }
   apply(theme);
   document.addEventListener("DOMContentLoaded", function () {
