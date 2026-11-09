@@ -6,7 +6,7 @@ Static site for GitHub Pages. No build step.
 - `index.html`, `agenda.html`, `research.html` — the three pages. The CV tab links straight to `cv.pdf`.
 - `cv.html` — source of the CV. Edit this, then re-print it to `cv.pdf` (see below).
 - `style.css` — layout, colours, light and dark themes. `theme.js` — the dark-mode toggle (remembers the choice in the browser).
-- `fonts/` — Source Serif 4 (SIL Open Font License), bundled so the site and the PDF use the same font offline.
+- Font: Times New Roman (system font, nothing bundled).
 - `profile_pic.jpg` — the home-page photo.
 
 ## Publish on GitHub Pages
