@@ -1,4 +1,4 @@
-/* Fiker Negash — site stylesheet. Minimal, with a faint neobrutalist trace: hairline rules, pale yellow active tab, no shadows. Font: Times New Roman (system). */
+/* Fiker Negash — site stylesheet. Minimal, with a faint neobrutalist trace: hairline rules, pale yellow active tab, no shadows. Font: Roboto via Google Fonts (as on guygrossman.com). */
 
 :root {
   --bg: #fefefd;
@@ -26,28 +26,30 @@
 }
 
 * { box-sizing: border-box; }
-html { font-size: 17px; }
+html { font-size: 16px; }
 body {
   margin: 0;
   position: relative;
   background: var(--bg);
   color: var(--text);
-  font-family: "Times New Roman", Times, "Liberation Serif", serif;
+  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.5;
   transition: background .2s ease, color .2s ease;
 }
 .wrap { max-width: 900px; margin: 0 auto; padding: 0 16px; }
 
 /* Layout: tabs stacked in a left column, content on the right */
 .layout { display: grid; grid-template-columns: 170px 1fr; column-gap: 56px; align-items: start; padding-top: 44px; }
+.top { padding-top: 44px; }
+.top + .layout { padding-top: 22px; }
 .side { position: sticky; top: 32px; }
 nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
 nav a {
   display: inline-block;
   color: var(--heading);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
   font-size: .95rem;
   padding: 4px 11px;
   border: 1px solid transparent;
@@ -60,13 +62,13 @@ nav a[aria-current="page"] { border-color: var(--ink); background: var(--accent)
 
 /* Body text */
 main { padding: 0 0 56px; min-height: 55vh; min-width: 0; }
-h1 { font-size: 1.6rem; font-weight: 700; color: var(--heading); margin: 0 0 1rem; letter-spacing: -.01em; }
-h2 { font-size: 1.1rem; font-weight: 700; color: var(--heading); margin: 1.8rem 0 .6rem; }
+h1 { font-size: 1.6rem; font-weight: 500; color: var(--heading); margin: 0 0 1rem; letter-spacing: -.01em; }
+h2 { font-size: 1.1rem; font-weight: 500; color: var(--heading); margin: 1.8rem 0 .6rem; }
 p { margin: 0 0 .9rem; }
 em { font-style: italic; }
 
 /* Links: boxed with a hard shadow on hover */
-main a, footer a {
+main a, footer a, .top a {
   color: inherit;
   text-decoration: none;
   border: 1px solid var(--ink);
@@ -78,11 +80,11 @@ main a, footer a {
   transition: transform .1s ease, box-shadow .1s ease, background .1s ease;
   display: inline-block;
 }
-main a:hover, footer a:hover { background: var(--accent); color: #0a0a0a; border-color: var(--muted); }
+main a:hover, footer a:hover, .top a:hover { background: var(--accent); color: #0a0a0a; border-color: var(--muted); }
 
 /* Home: big name, affiliation line, photo on the right */
-.big-name { font-size: 2.5rem; font-weight: 700; letter-spacing: -.02em; margin: 0 0 .3rem; line-height: 1.1; }
-.affil { color: var(--muted); margin-bottom: 1.3rem; font-weight: 500; }
+.big-name { font-size: 2.4rem; font-weight: 400; letter-spacing: -.01em; margin: 0 0 .3rem; line-height: 1.15; }
+.affil { color: var(--muted); margin-bottom: 0; font-weight: 400; }
 .portrait-img { float: left; width: 230px; height: auto; margin: .2rem 28px 16px 0; border: none; border-radius: 12px; }
 .clear { clear: both; }
 
@@ -93,11 +95,11 @@ ol.projects li { margin-bottom: .6rem; padding-left: .2rem; }
 /* Research page: papers with collapsible abstracts */
 ol.papers { padding-left: 1.4rem; margin: 0; }
 ol.papers li { margin-bottom: 1.5rem; }
-ol.papers .title { color: var(--heading); font-style: italic; }
+ol.papers .title { color: var(--heading); font-style: italic; font-weight: 500; }
 ol.papers .authors { display: block; margin-top: .15rem; color: var(--muted); }
 ol.papers .links { display: flex; flex-wrap: wrap; gap: .5rem .8rem; align-items: baseline; margin-top: .55rem; font-size: .92rem; }
 details { display: inline; }
-details summary { list-style: none; cursor: pointer; display: inline-block; border: 1px solid var(--ink); padding: 0 .3em; line-height: 1.3; background: var(--surface); font-weight: 600; transition: transform .1s ease, box-shadow .1s ease, background .1s ease; }
+details summary { list-style: none; cursor: pointer; display: inline-block; border: 1px solid var(--ink); padding: 0 .3em; line-height: 1.3; background: var(--surface); font-weight: 500; transition: transform .1s ease, box-shadow .1s ease, background .1s ease; }
 details summary::-webkit-details-marker { display: none; }
 details summary:hover { background: var(--accent); color: #0a0a0a; }
 details[open] summary { background: var(--accent); color: #0a0a0a; }
