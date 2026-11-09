@@ -93,7 +93,7 @@ ol.projects li { margin-bottom: .6rem; padding-left: .2rem; }
 /* Research page: papers with collapsible abstracts */
 ol.papers { padding-left: 1.4rem; margin: 0; }
 ol.papers li { margin-bottom: 1.5rem; }
-ol.papers .title { color: var(--heading); font-weight: 700; }
+ol.papers .title { color: var(--heading); font-style: italic; }
 ol.papers .authors { display: block; margin-top: .15rem; color: var(--muted); }
 ol.papers .links { display: flex; flex-wrap: wrap; gap: .5rem .8rem; align-items: baseline; margin-top: .55rem; font-size: .92rem; }
 details { display: inline; }
