@@ -3,11 +3,11 @@
 Static site for GitHub Pages. No build step.
 
 ## Files
-- `index.html`, `research.html`, `contact.html` — the three pages. The CV tab links straight to `cv.pdf`.
+- `index.html`, `agenda.html`, `research.html` — the three pages. The CV tab links straight to `cv.pdf`.
 - `cv.html` — source of the CV. Edit this, then re-print it to `cv.pdf` (see below).
 - `style.css` — layout, colours, light and dark themes. `theme.js` — the dark-mode toggle (remembers the choice in the browser).
-- `fonts/` — Newsreader (SIL Open Font License), bundled so the site and the PDF use the same font offline.
-- `photo.jpg` — not included yet. Save your picture under that name in this folder and the dashed slot on the home page is replaced automatically.
+- `fonts/` — EB Garamond (SIL Open Font License), bundled so the site and the PDF use the same font offline.
+- `profile_pic.png` — the home-page photo.
 
 ## Publish on GitHub Pages
 1. Create a repository named `<your-username>.github.io` on GitHub.
