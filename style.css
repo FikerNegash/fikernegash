@@ -1,23 +1,25 @@
-/* Fiker Negash — site stylesheet. Neobrutalist treatment: thick borders, hard offset shadows, flat yellow accent. Font: Times New Roman (system). */
+/* Fiker Negash — site stylesheet. Minimal, with a faint neobrutalist trace: hairline rules, pale yellow active tab, no shadows. Font: Times New Roman (system). */
 
 :root {
   --bg: #fefefd;
   --text: #141414;
   --heading: #0a0a0a;
   --muted: #4f4f4f;
-  --ink: #0a0a0a;         /* border and shadow colour */
+  --ink: #c9c9c9;         /* hairline rule colour */
+  --ink-strong: #0a0a0a;
   --accent: #fdeea0;      /* pale yellow */
   --accent-2: #ff8a3d;    /* orange, used sparingly */
   --surface: #ffffff;
-  --shadow: 2px 2px 0 var(--ink);
-  --shadow-sm: 1.5px 1.5px 0 var(--ink);
+  --shadow: none;
+  --shadow-sm: none;
 }
 :root[data-theme="dark"] {
   --bg: #161616;
   --text: #ececec;
   --heading: #ffffff;
   --muted: #b0b0b0;
-  --ink: #f2f2f2;
+  --ink: #3a3a3a;
+  --ink-strong: #f2f2f2;
   --accent: #d9c86a;
   --accent-2: #ff9a55;
   --surface: #1f1f1f;
@@ -37,7 +39,7 @@ body {
 .wrap { max-width: 780px; margin: 0 auto; padding: 0 16px; }
 
 /* Header: tabs only, heavy rule under the bar */
-header { padding: 16px 0 14px; border-bottom: 1.5px solid var(--ink); margin-bottom: 40px; }
+header { padding: 16px 0 14px; border-bottom: 1px solid var(--ink); margin-bottom: 40px; }
 header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
 nav a {
@@ -50,9 +52,8 @@ nav a {
   border: 1px solid transparent;
   transition: transform .1s ease, box-shadow .1s ease, background .1s ease;
 }
-nav a:hover { border-color: var(--ink); background: var(--surface); box-shadow: var(--shadow-sm); transform: translate(-1px, -1px); }
-nav a[aria-current="page"] { border-color: var(--ink); background: var(--accent); color: #0a0a0a; box-shadow: var(--shadow-sm); }
-nav a[aria-current="page"]:hover { transform: none; }
+nav a:hover { background: var(--accent); color: #0a0a0a; }
+nav a[aria-current="page"] { border-color: var(--ink); background: var(--accent); color: #0a0a0a; }
 #theme-toggle { background: none; border: none; padding: 4px 6px; color: var(--heading); font: inherit; font-size: 1.25rem; line-height: 1; cursor: pointer; }
 #theme-toggle:hover { color: var(--accent-2); }
 
@@ -76,12 +77,12 @@ main a, footer a {
   transition: transform .1s ease, box-shadow .1s ease, background .1s ease;
   display: inline-block;
 }
-main a:hover, footer a:hover { background: var(--accent); color: #0a0a0a; box-shadow: var(--shadow-sm); transform: translate(-1px, -1px); }
+main a:hover, footer a:hover { background: var(--accent); color: #0a0a0a; border-color: var(--muted); }
 
 /* Home: big name, affiliation line, photo on the right */
 .big-name { font-size: 2.5rem; font-weight: 700; letter-spacing: -.02em; margin: 0 0 .3rem; line-height: 1.1; }
 .affil { color: var(--muted); margin-bottom: 1.3rem; font-weight: 500; }
-.portrait-img { float: right; width: 230px; height: auto; margin: .2rem 0 16px 28px; border: 1.5px solid var(--ink); border-radius: 12px; box-shadow: var(--shadow); background: var(--surface); }
+.portrait-img { float: right; width: 230px; height: auto; margin: .2rem 0 16px 28px; border: none; border-radius: 12px; }
 .clear { clear: both; }
 
 /* Research agenda: numbered projects */
@@ -97,11 +98,11 @@ ol.papers .links { display: flex; flex-wrap: wrap; gap: .5rem .8rem; align-items
 details { display: inline; }
 details summary { list-style: none; cursor: pointer; display: inline-block; border: 1px solid var(--ink); padding: 0 .3em; line-height: 1.3; background: var(--surface); font-weight: 600; transition: transform .1s ease, box-shadow .1s ease, background .1s ease; }
 details summary::-webkit-details-marker { display: none; }
-details summary:hover { background: var(--accent); color: #0a0a0a; box-shadow: var(--shadow-sm); transform: translate(-1px, -1px); }
+details summary:hover { background: var(--accent); color: #0a0a0a; }
 details[open] summary { background: var(--accent); color: #0a0a0a; }
-details p { display: block; margin: .7rem 0 .3rem; padding: .7rem .9rem; border: 1px solid var(--ink); background: var(--surface); box-shadow: var(--shadow); font-size: .95rem; line-height: 1.45; }
+details p { display: block; margin: .7rem 0 .3rem; padding: .7rem .9rem; border-left: 2px solid var(--accent); background: var(--surface); font-size: .95rem; line-height: 1.45; }
 
-footer { border-top: 1.5px solid var(--ink); padding: 18px 0 48px; color: var(--muted); font-size: .82rem; text-align: center; }
+footer { border-top: 1px solid var(--ink); padding: 18px 0 48px; color: var(--muted); font-size: .82rem; text-align: center; }
 
 @media (max-width: 560px) {
   html { font-size: 16px; }
