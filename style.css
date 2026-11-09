@@ -87,6 +87,7 @@ main a:hover, footer a:hover, .top a:hover { background: var(--accent); color: #
 .affil { color: var(--muted); margin-bottom: 0; font-weight: 400; }
 .portrait-img { float: left; width: 230px; height: auto; margin: .2rem 28px 16px 0; border: none; border-radius: 12px; }
 .clear { clear: both; }
+.below { clear: both; }
 
 /* Research agenda: numbered projects */
 ol.projects { padding-left: 1.4rem; margin: 0 0 1.4rem; }
