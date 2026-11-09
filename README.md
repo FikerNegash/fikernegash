@@ -7,7 +7,7 @@ Static site for GitHub Pages. No build step.
 - `cv.html` — source of the CV. Edit this, then re-print it to `cv.pdf` (see below).
 - `style.css` — layout, colours, light and dark themes. `theme.js` — the dark-mode toggle (remembers the choice in the browser).
 - `fonts/` — STIX Two Text (SIL Open Font License), a Times design, bundled so the site and the PDF use the same font offline.
-- `profile_pic.jpg` — the home-page photo.
+- `profile_pic.png` — the home-page photo.
 
 ## Publish on GitHub Pages
 1. Create a repository named `<your-username>.github.io` on GitHub.
